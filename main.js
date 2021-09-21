@@ -8,19 +8,34 @@ var homeTownBiomes = ["Forest", "Jungle", "Ice", "Desert", "Arid", "Tropical", "
 // colors and descendants separately
 
 function rollDice() {
+	$("#tableCont").animate({opacity: 0}, 500);
+
 	var colorR = randomInteger(0,255);
 	var colorG = randomInteger(0,255);
 	var colorB = randomInteger(0,255);
+	var randGameGenre = randomArrayItem(gameGenres);
+	var randLitGenre = randomArrayItem(literaryGenres);
+	var randJobClass = randomArrayItem(jobClasses);
+	var randAlignment = randomArrayItem(alignments);
+	var randFinStatus = randomArrayItem(financialStatuses);
+	var randEra = randomArrayItem(eras);
+	var randBiome = randomArrayItem(homeTownBiomes);
 
-	$("#gameGenre").html(randomArrayItem(gameGenres));
-	$("#literaryGenre").html(randomArrayItem(literaryGenres));
-	$("#jobClass").html(randomArrayItem(jobClasses));
-	$("#alignment").html(randomArrayItem(alignments));
-	$("#financialStatus").html(randomArrayItem(financialStatuses));
-	$("#era").html(randomArrayItem(eras));
-	$("#descendants").html(randomInteger(0, 5));
-	$("#homeTownBiome").html(randomArrayItem(homeTownBiomes));
-	$("#preferredColor").css("backgroundColor", "rgba(" + colorR + "," + colorG + "," + colorB + ")");
+	setTimeout(() => {
+		$("#gameGenre").html(randGameGenre);
+		$("#literaryGenre").html(randLitGenre);
+		$("#jobClass").html(randJobClass);
+		$("#alignment").html(randAlignment);
+		$("#financialStatus").html(randFinStatus);
+		$("#era").html(randEra);
+		$("#homeTownBiome").html(randBiome);
+
+		$("#descendants").html(randomInteger(0, 5));
+		$("#preferredColor").css("backgroundColor", "rgba(" + colorR + "," + colorG + "," + colorB + ")");
+		
+		$("#tableCont").animate({opacity: 1}, 1000);
+	}, 550);
+
 }
 
 function exportImage() {

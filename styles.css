@@ -44,84 +44,10 @@ p {
 		box-shadow: 0px 0px 30px 0px cornsilk;
 	}
 }
-.exm {
-	margin-top: 1em;
-	width:70%;
-}
-.exmText {
-	width:60%;
-	text-align:center;
-	margin: 0 auto;
-	font-family: 'Indie Flower', Arial;
-	color: cornsilk;
-	font-size: 1.1em;
-}
-.closeButton {
-    position: absolute;
-    background: darkred;
-    color: ghostwhite;
-	font-size:1.3em;
-    right: 0;
-}
-.closeButton:hover {
-	animation: btn_hover 0.6s;
-	animation-fill-mode: forwards;
-}
-.invImageBorder {
-	animation: borderAnim 0.6s;
-	animation-fill-mode: forwards;
-}
-@keyframes borderAnim{
-	0% {
-		box-shadow: 0 0 0 0 cornsilk inset;
-	}
-	100% {
-		box-shadow: 0 0 1.3em 1.3em cadetblue inset;
-	}
-}
-.icon:hover {
-	animation: heartbeat 1.5s ease-in-out infinite both;
-}
-@keyframes heartbeat {
-  from {
-    transform: scale(1);
-    transform-origin: center center;
-    animation-timing-function: ease-out;
-  }
-  10% {
-    transform: scale(0.91);
-    animation-timing-function: ease-in;
-  }
-  17% {
-    transform: scale(0.98);
-    animation-timing-function: ease-out;
-  }
-  33% {
-    transform: scale(0.87);
-    animation-timing-function: ease-in;
-  }
-  45% {
-    transform: scale(1);
-    animation-timing-function: ease-out;
-  }
-}
 .footP {
 	text-align:center;
 	padding:0;
 	margin-top:0;
-}
-#note {
-	width:50%;
-	margin: 0 auto;
-	text-align:center;
-	font-size: 0.9em;
-	opacity: 0;
-}
-#cb1 {
-	top: 0;
-}
-#cb2 {
-	bottom: 0;
 }
 #container {
 	width:50%;
@@ -135,6 +61,7 @@ p {
 	margin: 0 auto;
 	margin-top:3em;
 	background-color: rgba(100, 149,237,0.3);
+	opacity:0;
 }
 #tableCont td {
 	padding:0.2em;
@@ -151,6 +78,11 @@ p {
 	left: 50%;
 	transform: translateX(-50%);
 }
+.categoryP {
+	font-size:1em;
+	font-family: Verdana;
+	font-variant: small-caps;
+}
 
 @media only screen and (max-width: 500px) {
 	#tableCont {
@@ -159,29 +91,5 @@ p {
 	}
 	#container {
 		width:100%;
-	}
-	.exm {
-		width:80%;
-	}
-	.exmText {
-		width:80%;
-		text-align: justify;
-	}
-	.closeButton {
-		font-size:1em;
-	}
-	.icon:hover {
-		animation: null;
-	}
-	#examples {
-		width:80%;
-	}
-	@keyframes borderAnim{
-		0% {
-			box-shadow: 0 0 0 0 cornsilk inset;
-		}
-		100% {
-			box-shadow: 0 0 0.6em 0.6em cadetblue inset;
-		}
 	}
 }
