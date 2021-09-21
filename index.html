@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="robots" content="noindex">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+			rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js" integrity="sha512-tVYBzEItJit9HXaWTPo8vveXlkK62LbA+wez9IgzjTmFNLMBO1BEYladBw2wnM3YURZSMUyhayPCoLtjGh84NQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<h2>Character Concept Picker</h2>
+			<p>Character Concept Picker is a simple tool that can provide inspiration for character creation to authors or narrative designers. Your imagination does most of the work; the program is only meant as a starting point.</p>
+			<p>Press 'Generate' to create a new character. Press 'Save' to export the generated set.</p>
+			<button class="button" onclick="rollDice();">Generate</button><button class="button" id="exportButton" onclick="exportImage();">Save</button>
+			<table id="tableCont">
+				<tr>
+					<td>
+						<p>Game Genre:</p>
+					</td>
+					<td>
+						<p id="gameGenre"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Literary Genre:</p>
+					</td>
+					<td>
+						<p id="literaryGenre"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Job Class:</p>
+					</td>
+					<td>
+						<p id="jobClass"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Alignment:</p>
+					</td>
+					<td>
+						<p id="alignment"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Financial Status:</p>
+					</td>
+					<td>
+						<p id="financialStatus"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Era:</p>
+					</td>
+					<td>
+						<p id="era"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Descendants:</p>
+					</td>
+					<td>
+						<p id="descendants"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Home Town Biome:</p>
+					</td>
+					<td>
+						<p id="homeTownBiome"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Preferred Color:</p>
+					</td>
+					<td id="preferredColor">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="creditsDiv">
+			<p class="footP">Coded by <a href="https://homeforfiction.com/" rel="noopener" target="_blank">Chris Angelis</a>. Data by <a href="http://mslacreative.com/" rel="noopener" target="_blank">Jacob Conner Harris</a>.</p>
+		</div>
+	</body>
+</html>
