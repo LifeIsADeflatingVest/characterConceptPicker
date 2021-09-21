@@ -68,7 +68,8 @@ p {
 	width:50%;
 }
 #tableCont p {
-	padding:0.1em;
+	padding:0.3em;
+	font-size:1.1em;
 }
 #creditsDiv {
 	text-align:center; 
@@ -88,6 +89,7 @@ p {
 	#tableCont {
 		height:10em;
 		margin-top:1.5em;
+		min-width:100%;
 	}
 	#container {
 		width:100%;

@@ -22,6 +22,41 @@ function rollDice() {
 	var randBiome = randomArrayItem(homeTownBiomes);
 
 	setTimeout(() => {
+		switch (randBiome) {
+			case "Oceanic":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #606dbc,#606dbc 10px,#465298 10px,#465298 20px)"); 
+				$("#homeTownBiome").css("color", "ghostwhite");
+				break;
+			case "Seaside":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #DFCC6C,#DFCC6C 10px,#6CDADF 10px,#6CDADF 20px)"); 
+				$("#homeTownBiome").css("color", "darkblue");
+				break;
+			case "Tropical":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #6CDFD0,#6CDFD0 10px,#9CD6F8 10px,#9CD6F8 20px)"); 
+				$("#homeTownBiome").css("color", "darkgreen");
+				break;
+			case "Arid":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #ADD678,#ADD678 10px,#C1AC59 10px,#C1AC59 20px)"); 
+				$("#homeTownBiome").css("color", "black");
+				break;				
+			case "Desert":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #F3EE8B, #F3EE8B 10px,#FBF2C9 10px,#FBF2C9 20px)"); 
+				$("#homeTownBiome").css("color", "black");
+				break;
+			case "Ice":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #C9F9FB, #C9F9FB 10px,#EEF5F9 10px,#EEF5F9 20px)"); 
+				$("#homeTownBiome").css("color", "darkblue");
+				break;	
+			case "Jungle":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #1B671B, #1B671B 10px,#8D664D 10px,#8D664D 20px)"); 
+				$("#homeTownBiome").css("color", "cornsilk");
+				break;
+			case "Forest":
+				$("#homeTownBiome").parent().css("background-image", "repeating-linear-gradient(45deg, #4D8D59,#4D8D59 10px,#599424 10px,#599424 20px)"); 
+				$("#homeTownBiome").css("color", "cornsilk");
+				break;				
+		}
+		
 		$("#gameGenre").html(randGameGenre);
 		$("#literaryGenre").html(randLitGenre);
 		$("#jobClass").html(randJobClass);
