@@ -49,6 +49,11 @@ p {
 	padding:0;
 	margin-top:0;
 }
+.categoryP {
+	font-size:1em;
+	font-family: Verdana;
+	font-variant: small-caps;
+}
 #container {
 	width:50%;
 	text-align:center;
@@ -83,11 +88,6 @@ p {
 	background-repeat: no-repeat;
 	background-position: right center;
 	background-size: contain;
-}
-.categoryP {
-	font-size:1em;
-	font-family: Verdana;
-	font-variant: small-caps;
 }
 
 @media only screen and (max-width: 500px) {
