@@ -7,13 +7,13 @@ var eras = ["Primitive", "Evolved", "Advanced"];
 var homeTownBiomes = ["Forest", "Jungle", "Ice", "Desert", "Arid", "Tropical", "Seaside", "Oceanic"];
 // colors and descendants separately
 
-const TempImage = window.Image
-
- const Image = function() {
-        const img = new TempImage()
-        img.crossOrigin = 'anonymous'
-        return img
- }
+// address CORS issue for exporting canvas
+const TempImage = window.Image;
+const Image = function() {
+        const img = new TempImage();
+        img.crossOrigin = 'anonymous';
+        return img;
+}
 
 function rollDice() {
 	$("#tableCont").animate({opacity: 0}, 500);
