@@ -79,6 +79,11 @@ p {
 	left: 50%;
 	transform: translateX(-50%);
 }
+#biomeBG {
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: contain;
+}
 .categoryP {
 	font-size:1em;
 	font-family: Verdana;
