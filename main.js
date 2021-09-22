@@ -13,6 +13,16 @@ function rollDice() {
 	var colorR = randomInteger(0,255);
 	var colorG = randomInteger(0,255);
 	var colorB = randomInteger(0,255);
+
+	var colorText = nearColor(colorR, colorG, colorB);
+	var hslColor = rgbToHsl(colorR, colorG, colorB);
+	var colLight = hslColor[2];
+
+	var favoriteColorFontColor = "ghostwhite";
+	if (colLight > 0.5) {
+		favoriteColorFontColor = "black";
+	}
+
 	var randGameGenre = randomArrayItem(gameGenres);
 	var randLitGenre = randomArrayItem(literaryGenres);
 	var randJobClass = randomArrayItem(jobClasses);
@@ -67,6 +77,9 @@ function rollDice() {
 
 		$("#descendants").html(randomInteger(0, 5));
 		$("#preferredColor").css("backgroundColor", "rgba(" + colorR + "," + colorG + "," + colorB + ")");
+
+		$("#colorName").html(colorText);
+		$("#colorName").css("color", favoriteColorFontColor);
 		
 		$("#tableCont").animate({opacity: 1}, 1000);
 	}, 550);
@@ -101,3 +114,43 @@ function randomArrayItem(array) {
 function randomInteger(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+function nearColor(cl1, cl2, cl3) {
+	var theColor = rgbToHex(cl1, cl2, cl3)
+
+	function componentToHex(c) {
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	  }
+	  
+	  function rgbToHex(r, g, b) {
+		return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+	  }
+
+	var n_match = ntc.name(theColor);
+	/*
+	n_rgb = n_match[0]; // RGB value of closest match
+	n_exactmatch = n_match[2]; // True if exact color match
+	*/
+  
+	return n_match[1]; // Text string: Color name
+}
+function rgbToHsl(r, g, b) {
+	r /= 255, g /= 255, b /= 255;
+	var max = Math.max(r, g, b), min = Math.min(r, g, b);
+	var h, s, l = (max + min) / 2;
+
+	if (max == min) {
+		h = s = 0; // achromatic
+	} else {
+		var d = max - min;
+		s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+		switch (max) {
+			case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+			case g: h = (b - r) / d + 2; break;
+			case b: h = (r - g) / d + 4; break;
+		}
+		h /= 6;
+	}
+
+	return [h, s, l];
+}

@@ -73,9 +73,9 @@ p {
 }
 #creditsDiv {
 	text-align:center; 
-	font-size:0.7em;
+	font-size:0.8em;
 	position: relative;
-	bottom:0;
+	bottom:2em;
 	left: 50%;
 	transform: translateX(-50%);
 }
