@@ -21,10 +21,29 @@
 		<div id="container">
 			<h2>Character Concept Picker</h2>
 			<p><em>Character Concept Picker</em> is a simple tool that can provide inspiration for character creation to authors or narrative designers. Your imagination does most of the work; the program is only meant as a starting point.</p>
-			<p>Press 'Generate' to create a new character. Press 'Save' to export the generated set.</p>
+			<p>Select a mode, a genre, and press 'Generate' to create a new character. Press 'Save' to export the generated set.</p>
+			<table id="settingTable">
+				<tr>
+					<td>
+						<button class="button switchOn" id="gameButt">Game</button>
+					</td>
+					<td>
+						<button class="button switchOff" id="literaryButt">Literary</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<form >
+							<select class="button form" id="genreForm">
+							  <option></option>
+							</select>
+						  </form>
+					</td>
+				</tr>
+			</table>
 			<button class="button" onclick="rollDice();">Generate</button><button class="button" id="exportButton" onclick="exportImage();">Save</button>
 			<table id="tableCont">
-				<tr>
+				<tr id="showingGame">
 					<td>
 						<p class="categoryP">Game Genre:</p>
 					</td>
@@ -32,7 +51,7 @@
 						<p id="gameGenre"></p>
 					</td>
 				</tr>
-				<tr>
+				<tr id="showingLiterary">
 					<td>
 						<p class="categoryP">Literary Genre:</p>
 					</td>
@@ -44,7 +63,7 @@
 					<td>
 						<p class="categoryP">Era:</p>
 					</td>
-					<td>
+					<td id="eraBG">
 						<p id="era"></p>
 					</td>
 				</tr>
@@ -60,7 +79,7 @@
 					<td>
 						<p class="categoryP">Financial Status:</p>
 					</td>
-					<td>
+					<td id="financialBG">
 						<p id="financialStatus"></p>
 					</td>
 				</tr>
@@ -74,10 +93,26 @@
 				</tr>
 				<tr>
 					<td>
+						<p class="categoryP">Relationship Status:</p>
+					</td>
+					<td>
+						<p id="relationshipStatus"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<p class="categoryP">Offspring:</p>
 					</td>
 					<td>
 						<p id="descendants"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="categoryP">Birth Month:</p>
+					</td>
+					<td>
+						<p id="birthMonth"></p>
 					</td>
 				</tr>
 				<tr>
@@ -90,10 +125,50 @@
 				</tr>
 				<tr>
 					<td>
+						<p class="categoryP">Character Trait:</p>
+					</td>
+					<td>
+						<p id="characterTrait"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="categoryP">Meyers-Briggs 16 Personality Type:</p>
+					</td>
+					<td>
+						<p id="personality"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<p class="categoryP">Favorite Color:</p>
 					</td>
 					<td id="preferredColor">
 						<p id="colorName"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="categoryP">Animal Affinity:</p>
+					</td>
+					<td>
+						<p id="animal"></p>
+					</td>
+				</tr>
+				<tr id="arcTR">
+					<td>
+						<p class="categoryP">Arcana:</p>
+					</td>
+					<td>
+						<p id="arcana"></p>
+					</td>
+				</tr>
+				<tr id="ffTR">
+					<td>
+						<p class="categoryP">Favorite Final Fantasy:</p>
+					</td>
+					<td>
+						<p id="fff"></p>
 					</td>
 				</tr>
 			</table>

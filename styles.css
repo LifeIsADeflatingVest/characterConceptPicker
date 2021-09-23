@@ -21,9 +21,13 @@ p {
 	font-size: 0.9em;
 	text-align:justify;
 }
+select {
+	background-color:rgb(40, 69, 99);
+}
 .button {
 	font-size:1em;
 	margin:1em;
+	width: 10em;
 	font-family: Verdana;
 	padding:1em;
 	background-color: #284563;
@@ -44,6 +48,14 @@ p {
 		box-shadow: 0px 0px 30px 0px cornsilk;
 	}
 }
+.switchOn {
+	background-image: linear-gradient(320deg, rgb(45, 209, 94) 0%, rgb(57, 134, 96) 47%, rgba(45, 209, 94, 1) 100%);
+	opacity: 1;
+}
+.switchOff {
+	background-image: linear-gradient(320deg, rgb(209, 45, 45) 0%, rgb(109, 11, 11) 47%, rgba(209, 45, 45, 1) 100%);
+	opacity: 0.5;
+}
 .footP {
 	text-align:center;
 	padding:0;
@@ -53,6 +65,17 @@ p {
 	font-size:1em;
 	font-family: Verdana;
 	font-variant: small-caps;
+	text-align: left;
+}
+.form {
+	width: 50%;
+	color:ghostwhite;
+	padding:1em;
+	text-align: center;
+	font-size:0.8em;
+	font-family: Verdana;
+	font-variant: small-caps;
+	background-image: linear-gradient(320deg, rgb(21, 100, 110) 0%, rgb(11, 50, 109) 47%, rgba(21, 100, 110, 1) 100%);
 }
 #container {
 	width:50%;
@@ -89,6 +112,26 @@ p {
 	background-position: right center;
 	background-size: contain;
 }
+#eraBG {
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: auto 50%;
+}
+#financialBG {
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: auto 50%;
+}
+#settingTable {
+	margin: 0 auto;
+	margin-top:3em;
+	margin-bottom:2em;
+}
+#settingTable p {
+	font-size:1em;
+	font-family: Verdana;
+	font-variant: small-caps;
+}
 
 @media only screen and (max-width: 500px) {
 	#tableCont {
@@ -98,5 +141,11 @@ p {
 	}
 	#container {
 		width:100%;
+	}
+	#biomeBG {
+		background-size: auto 70%;
+	}
+	p {
+		text-align: center;
 	}
 }
