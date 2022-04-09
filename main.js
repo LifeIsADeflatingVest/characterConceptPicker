@@ -102,6 +102,8 @@ function rollDice() {
 
 	var randGameGenre = randomArrayItem(gameGenres); // inactive, as the tr is hidden
 	var randLitGenre = randomArrayItem(literaryGenres); //inactive, as the tr is hidden
+	
+	var randomName = randomArrayItem(firstName) + " " + randomArrayItem(namesLast);
 
 	var randJobClass = randomArrayItem(jobClasses);
 	var randAlignment = randomArrayItem(alignments);
@@ -125,6 +127,7 @@ function rollDice() {
 
 		$("#gameGenre").html(randGameGenre);
 		$("#literaryGenre").html(randLitGenre);
+		$("#theName").html(randomName);
 		$("#jobClass").html(randJobClass);
 		$("#alignment").html(randAlignment);
 		$("#financialStatus").html(randFinStatus);
@@ -142,7 +145,7 @@ function rollDice() {
 			$("#descendants").html(0);
 		}
 		else {
-			$("#descendants").html(randomInteger(0, 5));
+			$("#descendants").html(randomInteger(0, 4));
 		}
 
 		$("#preferredColor").css("backgroundColor", "rgba(" + colorR + "," + colorG + "," + colorB + ")");
@@ -326,6 +329,16 @@ function exportImage() {
 			window.open(uri);
 		}
 	}
+	
+	// export text
+	var theObj = parseTable();
+	var expo = JSON.stringify(theObj);
+	
+	var hiddenElement = document.createElement('a');
+	hiddenElement.href = 'data:attachment/text,' + encodeURI(expo);
+	hiddenElement.target = '_blank';
+	hiddenElement.download = 'NarrativeNods_ImportFile.txt';
+	hiddenElement.click();
 }
 function randomArrayItem(array) {
 	return array[Math.floor(Math.random() * array.length)];
@@ -373,3 +386,21 @@ function rgbToHsl(r, g, b) {
 
 	return [h, s, l];
 }
+
+function parseTable() {
+	var obj = {};
+	var rows = document.getElementById("tableCont").rows;
+	for (var i = 0; i < rows.length;i++) {
+		if (!$(rows[i].cells[0]).is(":hidden")) {
+			obj[rows[i].cells[0].innerText]=rows[i].cells[1].innerText;
+		}
+	}
+	return obj;
+}
+
+
+
+
+
+
+
